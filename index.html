@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+        <p>Data de cotação: 31/07/2024</p>
+        <div class="converter">
+            <label for="fromCurrency">De:</label>
+            <select id="fromCurrency">
+                <option value="BRL">Real (BRL)</option>
+                <option value="USD">Dólar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="JPY">Iene Japonês (JPY)</option>
+                <option value="GBP">Libra Esterlina (GBP)</option>
+                <option value="CNY">Yuan Chinês (CNY)</option>
+                <option value="ARS">Peso Argentino (ARS)</option>
+            </select>
+            <label for="toCurrency">Para:</label>
+            <select id="toCurrency">
+                <option value="USD">Dólar (USD)</option>
+                <option value="BRL">Real (BRL)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="JPY">Iene Japonês (JPY)</option>
+                <option value="GBP">Libra Esterlina (GBP)</option>
+                <option value="CNY">Yuan Chinês (CNY)</option>
+                <option value="ARS">Peso Argentino (ARS)</option>
+            </select>
+            <input type="number" id="amount" placeholder="Digite o valor">
+            <button onclick="convert()">Converter</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
