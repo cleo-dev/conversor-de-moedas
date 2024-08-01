@@ -50,8 +50,5 @@ Para executar este projeto localmente, siga os passos abaixo:
 - `styles.css`: Estilos CSS para a interface do usuário.
 - `script.js`: Lógica JavaScript para a conversão de moedas.
 
-## Captura de Tela
-![Conversor de Moedas](https://github.com/cleo-dev/conversor-de-moedas/raw/main/images/conversor-de-moedas.png)
-
-## Autor
+# Autor
 Cléo (cleo-dev)
