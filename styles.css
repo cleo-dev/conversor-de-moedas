@@ -1,47 +1,97 @@
+:root {
+    --fundo: #eef3f7;
+    --cartao: #ffffff;
+    --texto: #1c2833;
+    --suave: #5d6d7e;
+    --borda: #d5dde5;
+    --destaque: #0b6e4f;
+    --destaque-escuro: #08513a;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fundo: #11181f;
+        --cartao: #1b252f;
+        --texto: #e8edf2;
+        --suave: #9aa8b5;
+        --borda: #2e3b48;
+        --destaque: #3ccf91;
+        --destaque-escuro: #2fae79;
+    }
+}
+
+* { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
     margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 16px;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
+    background: var(--cartao);
+    width: 100%;
+    max-width: 480px;
+    padding: 28px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+
+.status { margin: 0 0 20px; color: var(--suave); font-size: 0.9rem; }
+
+.converter { display: grid; gap: 16px; }
+
+.campo { display: grid; gap: 6px; font-size: 0.85rem; color: var(--suave); }
+
+.moedas { display: grid; grid-template-columns: 1fr; gap: 8px; }
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: var(--texto);
+    background: var(--cartao);
+    border: 1px solid var(--borda);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
-h1 {
-    margin-bottom: 10px;
+input:focus, select:focus, .inverter:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 1px;
 }
 
-p {
-    margin-bottom: 20px;
-}
-
-.converter {
-    margin-bottom: 20px;
-}
-
-label, input, select, button {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007BFF;
-    color: white;
+.inverter {
+    justify-self: center;
+    transform: rotate(90deg);
+    height: 46px;
+    width: 46px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--destaque);
+    color: #fff;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.inverter:hover { background: var(--destaque-escuro); }
+
+.resultado {
+    display: block;
+    margin-top: 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--destaque);
+    word-break: break-word;
 }
+
+.taxa { margin: 4px 0 0; color: var(--suave); font-size: 0.9rem; }
+
+footer { margin-top: 24px; font-size: 0.8rem; color: var(--suave); }
+footer a { color: inherit; }

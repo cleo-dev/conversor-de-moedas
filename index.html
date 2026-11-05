@@ -4,38 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Moedas</title>
+    <meta name="description" content="Converta valores entre real, dólar, euro e outras moedas com cotação atualizada.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <h1>Conversor de Moedas</h1>
-        <p>Data de cotação: 31/07/2024</p>
-        <div class="converter">
-            <label for="fromCurrency">De:</label>
-            <select id="fromCurrency">
-                <option value="BRL">Real (BRL)</option>
-                <option value="USD">Dólar (USD)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="JPY">Iene Japonês (JPY)</option>
-                <option value="GBP">Libra Esterlina (GBP)</option>
-                <option value="CNY">Yuan Chinês (CNY)</option>
-                <option value="ARS">Peso Argentino (ARS)</option>
-            </select>
-            <label for="toCurrency">Para:</label>
-            <select id="toCurrency">
-                <option value="USD">Dólar (USD)</option>
-                <option value="BRL">Real (BRL)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="JPY">Iene Japonês (JPY)</option>
-                <option value="GBP">Libra Esterlina (GBP)</option>
-                <option value="CNY">Yuan Chinês (CNY)</option>
-                <option value="ARS">Peso Argentino (ARS)</option>
-            </select>
-            <input type="number" id="amount" placeholder="Digite o valor">
-            <button onclick="convert()">Converter</button>
-        </div>
-        <div id="result"></div>
-    </div>
+        <p class="status" id="status" aria-live="polite">Buscando cotação atualizada…</p>
+
+        <form class="converter" id="formulario">
+            <label class="campo">
+                <span>Valor</span>
+                <input type="number" id="amount" value="100" min="0" step="0.01" inputmode="decimal" required>
+            </label>
+
+            <div class="moedas">
+                <label class="campo">
+                    <span>De</span>
+                    <select id="fromCurrency"></select>
+                </label>
+                <button type="button" id="inverter" class="inverter" aria-label="Inverter moedas" title="Inverter moedas">⇄</button>
+                <label class="campo">
+                    <span>Para</span>
+                    <select id="toCurrency"></select>
+                </label>
+            </div>
+        </form>
+
+        <output id="result" class="resultado" for="amount fromCurrency toCurrency"></output>
+        <p class="taxa" id="taxa"></p>
+
+        <footer>
+            Cotação: <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a>
+            &middot; <a href="https://github.com/cleo-dev/conversor-de-moedas" target="_blank" rel="noopener">código-fonte</a>
+        </footer>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

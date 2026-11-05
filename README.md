@@ -1,54 +1,32 @@
 # Conversor de Moedas
 
-## Descrição
-Este projeto é um conversor de moedas simples que utiliza taxas de câmbio fixas para converter valores entre diferentes moedas. As taxas de câmbio são baseadas na data de cotação de 31/07/2024.
+Aplicação web que converte valores entre 12 moedas, entre elas real, dólar, euro e as principais moedas da América do Sul. A **cotação é atualizada** a cada acesso.
 
-![image](https://github.com/user-attachments/assets/2dc4ebea-fc7e-4fa4-b3d2-5f737eec3635)
+**Acesse:** https://cleo-dev.github.io/conversor-de-moedas/
 
+## Funcionalidades
 
-## Link para o Projeto
-[Conversor de Moedas](https://cleo-dev.github.io/conversor-de-moedas/)
+- Cotação atualizada pela [ExchangeRate-API](https://www.exchangerate-api.com), um serviço gratuito que não pede chave de acesso.
+- Funciona sem internet: usa a última cotação salva no navegador ou, se não houver nenhuma, uma tabela de reserva.
+- Converte enquanto o valor é digitado e tem um botão para inverter as moedas.
+- Mostra os valores no formato brasileiro (`R$ 1.234,56`).
+- Layout responsivo para celular, com tema escuro automático.
+- Não usa nenhuma biblioteca externa: só HTML, CSS e JavaScript.
 
-## Moedas Suportadas e Taxas de Câmbio
-- **Real (BRL)**
-  - 1 BRL = 0.18 USD (Dólar)
-  - 1 BRL = 0.16 EUR (Euro)
-  - 1 BRL = 26.52 JPY (Iene Japonês)
-  - 1 BRL = 0.14 GBP (Libra Esterlina)
-  - 1 BRL = 1.28 CNY (Yuan Chinês)
-  - 1 BRL = 164.50 ARS (Peso Argentino)
+## Como executar
 
-## Como Executar o Código
-Para executar este projeto localmente, siga os passos abaixo:
+```bash
+git clone https://github.com/cleo-dev/conversor-de-moedas.git
+cd conversor-de-moedas
+# abra o index.html no navegador
+```
 
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/cleo-dev/conversor-de-moedas.git
-    ```
+## Estrutura
 
-2. Navegue até o diretório do projeto:
-    ```bash
-    cd conversor-de-moedas
-    ```
+- `index.html`: interface.
+- `styles.css`: estilos, incluindo layout responsivo e tema escuro.
+- `script.js`: busca da cotação, cache, cálculo e formatação.
 
-3. Abra o arquivo `index.html` em um navegador:
-    - No Windows: 
-      ```bash
-      start index.html
-      ```
-    - No macOS:
-      ```bash
-      open index.html
-      ```
-    - No Linux:
-      ```bash
-      xdg-open index.html
-      ```
+## Autor
 
-## Estrutura do Projeto
-- `index.html`: Estrutura HTML do conversor de moedas.
-- `styles.css`: Estilos CSS para a interface do usuário.
-- `script.js`: Lógica JavaScript para a conversão de moedas.
-
-# Autor
-Cléo (cleo-dev)
+Cléo Marques Brasil ([@cleo-dev](https://github.com/cleo-dev))
